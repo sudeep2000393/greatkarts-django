@@ -1,0 +1,43 @@
+/* Hide the input element inside the rate class */
+.rate > input {
+  display: none;
+}
+
+/* Style for the rate class */
+.rate {
+ display: inline-block;
+ border: 0;
+}
+
+/* Style for the label inside the rate class */
+.rate > label {
+ float: right;
+}
+
+/* Style for the label's pseudo-element before */
+.rate > label:before {
+  display: inline-block;
+  font-size: 1.1rem;
+  font-family: FontAwesome; /* Assuming you meant "FontAwesome" instead of "FontAwsome" */
+  content: "\f005"; /* Unicode character for the full star symbol */
+  margin: 0;
+  padding: 0.3rem 0.2rem;
+  cursor: pointer;
+}
+
+/* Style for half-star */
+.rate .half:before {
+  content: "\f089"; /* Unicode character for the half star symbol */
+  position: absolute;
+  padding-right: 0; /* Remove padding-right to avoid spacing issues */
+  /* You may need to adjust the positioning based on your design */
+}
+
+input:checked ~ label,label:hover ~ label {
+   color: #ffb503;
+}
+
+input:checked + label:hover, input:checked ~ label:hover,input:checked ~ label:hover ~ label,
+label:hover ~ input:checked ~ label{
+  color: #cc9000;
+}
